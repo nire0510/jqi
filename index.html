@@ -1,0 +1,80 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jqi</title>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
+  <meta name="keywords" content="jq, json, data, processing, import, export, productivity, development, manipulation">
+<meta name="feditor:layout" content="eyJjb25zb2xlIjp7InpJbmRleCI6NSwiaGVpZ2h0IjoiNTAlIiwid2lkdGgiOiIzMCUiLCJ0b3AiOiI1MCUiLCJsZWZ0IjoiNzAlIiwiaWQiOiJjb25zb2xlIn0sIm5vdGVwYWRDU1MiOnsiekluZGV4Ijo2LCJoZWlnaHQiOiI0OSUiLCJ3aWR0aCI6IjI5JSIsInRvcCI6MCwibGVmdCI6IjQwJSIsImlkIjoibm90ZXBhZENTUyIsInNjcm9sbExlZnQiOjIxLjI4MzEyNSwic2Nyb2xsVG9wIjo1NTkuNX0sIm5vdGVwYWRIVE1MIjp7InpJbmRleCI6NywiaGVpZ2h0IjoiNDklIiwid2lkdGgiOiIzOSUiLCJ0b3AiOjAsImxlZnQiOjAsImlkIjoibm90ZXBhZEhUTUwiLCJzY3JvbGxMZWZ0IjowLCJzY3JvbGxUb3AiOjI2MH0sIm5vdGVwYWRKUyI6eyJ6SW5kZXgiOjMsImhlaWdodCI6IjQ5JSIsIndpZHRoIjoiMzAlIiwidG9wIjowLCJsZWZ0IjoiNzAlIiwiaWQiOiJub3RlcGFkSlMiLCJzY3JvbGxMZWZ0IjowLCJzY3JvbGxUb3AiOjB9LCJwcmV2aWV3Ijp7InpJbmRleCI6NCwiaGVpZ2h0IjoiNTAlIiwid2lkdGgiOiI2OSUiLCJ0b3AiOiI1MCUiLCJsZWZ0IjowLCJpZCI6InByZXZpZXcifX0=">
+<style id="feditor-css">
+body {
+  background: #43cea2;
+  background: -webkit-linear-gradient(to right, #185a9d, #43cea2);
+  background: linear-gradient(to right, #185a9d, #43cea2);
+
+
+  color: #fff;
+  font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
+  margin: 0;
+}
+
+article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.button {
+  background-color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  color: teal;
+  border: solid 1px #fff;
+  border-radius: 3px;
+  display: block;
+  font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  transition: background-color 500ms ease-out;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background-color: #fff;
+}
+
+.logo {
+  padding: 2rem;
+}
+</style>
+</head>
+<body>
+  <article>
+    <img class="logo" src="data:image/png;base64,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" alt="">
+    <header>
+      <h1>
+        jqi
+      </h1>
+      <h2 class="slogan">
+        The almighty jq processor<br>wrapped in a GUI
+      </h2>
+      <a class="button" href="https://goo.gl/jnFSgu">Download for Mac</a>
+    </header>
+  </article>
+</body>
+</html>
