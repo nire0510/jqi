@@ -8,193 +8,6 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta name="description" content="The almighty jq processor, wrapped in a GUI.">
   <meta name="keywords" content="jq, json, data, processing, import, export, productivity, development, manipulation">
-<meta name="feditor:layout" content="eyJjb25zb2xlIjp7InpJbmRleCI6NSwiaGVpZ2h0IjoiNTAlIiwid2lkdGgiOiIzMCUiLCJ0b3AiOiI1MCUiLCJsZWZ0IjoiNzAlIiwiaWQiOiJjb25zb2xlIn0sIm5vdGVwYWRDU1MiOnsiekluZGV4Ijo0MiwiaGVpZ2h0IjoiNDklIiwid2lkdGgiOiIyOSUiLCJ0b3AiOjAsImxlZnQiOiI0MCUiLCJpZCI6Im5vdGVwYWRDU1MiLCJzY3JvbGxMZWZ0IjoyODYsInNjcm9sbFRvcCI6OTM3fSwibm90ZXBhZEhUTUwiOnsiekluZGV4Ijo0MSwiaGVpZ2h0IjoiNDklIiwid2lkdGgiOiIzOSUiLCJ0b3AiOjAsImxlZnQiOjAsImlkIjoibm90ZXBhZEhUTUwiLCJzY3JvbGxMZWZ0IjozLCJzY3JvbGxUb3AiOjI1OH0sIm5vdGVwYWRKUyI6eyJ6SW5kZXgiOjc5LCJoZWlnaHQiOiI0OSUiLCJ3aWR0aCI6IjMwJSIsInRvcCI6MCwibGVmdCI6IjcwJSIsImlkIjoibm90ZXBhZEpTIiwic2Nyb2xsTGVmdCI6MCwic2Nyb2xsVG9wIjowfSwicHJldmlldyI6eyJ6SW5kZXgiOjgyLCJoZWlnaHQiOiI1MCUiLCJ3aWR0aCI6IjI4LjMxNTc4OTQ3MzY4NDIxMiUiLCJ0b3AiOiI1MCUiLCJsZWZ0IjowLCJpZCI6InByZXZpZXcifX0=">
-<style id="feditor-css">
-body {
-  background-color: #ddd;
-  color: #000;
-  font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
-  margin: 0;
-}
-
-article {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-}
-
-h1 {
-  font-size: 4rem;
-}
-
-hr {
-  background-color: transparent;
-  height: 0;
-  margin: 0 auto;
-  width: 80vw;
-}
-
-#intro {
-  background: #aa076b;
-  background: -webkit-linear-gradient(to right, #aa076b, #61045f);
-  background: linear-gradient(to right, #aa076b, #61045f);
-  color: #fff;
-  height: 100vh;
-  width: 100vw;
-  padding: 0;
-}
-
-#intro h2 {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-#jq {
-  background-color: #fff;
-  color: #333;
-  flex-direction: column;
-}
-
-#jq img {
-  max-height: 80vh;
-}
-
-#download {
-  background-color: #fff;
-  display: block;
-  text-align: center;
-}
-
-#download .button {
-  border-radius: 5px;
-  background-color: rgba(0, 128, 128, 0.8);
-  color: #fff;
-  font-size: 3rem;
-}
-
-#download .button:hover {
-  background-color: teal;
-}
-
-.jq-steps {
-  
-}
-
-.js-steps {
-  width: 400px;
-}
-
-.circle {
-  border-radius: 50%;
-  border: solid 10px #aaa;
-  background-color: #272822;
-  margin: 2rem;
-  height: 300px;
-  width: 300px;
-  position: relative;
-}
-
-.circle.program {
-  background: transparent url(https://github.com/nire0510/jqi/raw/master/jqi-program.png);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.circle.program .icon-button {
-  font-size: 10rem;
-  height: 150px;
-  width: 150px;
-}
-
-.circle.export {
-  background: transparent url(https://github.com/nire0510/jqi/raw/master/jqi.png);
-}
-
-.icon-button {
-  border-radius: 50%;
-  color: #fff;
-  font-size: 3rem;
-  height: 50px;
-  width: 50px;
-  padding: 1rem;
-  position: absolute;
-}
-
-.icon-button.web {
-  background-color: #ec407a;
-  left: 15%;
-  top: 20%;
-}
-
-.icon-button.file {
-  background-color: #66bb6a;
-  right: 15%;
-  top: 20%;
-}
-
-.icon-button.clipboard {
-  background-color: #03a9f4;
-  bottom: 10%;
-  left: calc(50% - 40px);
-}
-
-.button {
-  background-color: rgba(255, 255, 255, 0.8);
-  cursor: pointer;
-  color: teal;
-  border: solid 1px #fff;
-  border-radius: 3px;
-  display: inline-block;
-  font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-top: 2rem;
-  padding: 1rem;
-  transition: background-color 500ms ease-out;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.button.more {
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.8);
-  transition: color 500ms ease-out;
-}
-
-.button.more:hover {
-  background-color: transparent;
-  color: #fff;
-}
-
-.button:hover {
-  background-color: #fff;
-}
-
-.logo {
-  padding: 2rem;
-}
-
-.opacity-50 {
-  opacity: 0.5;
-}
-
-@media all and (max-width: 550px) {
-  article {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  h1 {
-    margin: 0;
-  }
-  
-  .button {
-    margin-top: 0;
-  }
-}
-</style>
 </head>
 <body>
   <article id="intro">
@@ -223,7 +36,7 @@ hr {
       <h2>IMPORT JSON</h2>
       <p>
         Start by importing JSON from clipboard, a file or even the network with cURL. <br>
-        Your
+        JSON will be stored locally and available for future use, even if you close jqi.
       </p>
     </div>
   </article>
@@ -233,19 +46,18 @@ hr {
     <div>
       <h2>APPLY FILTERS</h2>
       <p>
-         Write your jq program to slice, filter, map or transform the imported JSON data
+         Write your jq program to slice, filter, map or transform the imported JSON data. <br>
+         jq offers some powerful commands; It is most recommended to <a href="https://stedolan.github.io/jq/manual/">read its manual</a> to get the most out of it.
       </p>
     </div>
   </article>
   <hr>
   <article class="jq-steps">
-    <div class="circle export">
-      
-    </div>
+    <div class="circle export"></div>
     <div>
       <h2>EXPORT OUTPUT</h2>
       <p>
-         Write your jq program to slice, filter, map or transform the imported JSON data
+         Your jq program output can be easily saved to JSON file using the export button.
       </p>
     </div>
   </article>
@@ -254,10 +66,5 @@ hr {
   </article>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
-<script id="feditor-js">
-document.querySelector('a.more').addEventListener('click', function () {
-  Velocity(document.querySelector('.jq-steps'), 'scroll', { duration: 3000 });
-})
-</script>
 </body>
 </html>
