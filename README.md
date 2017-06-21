@@ -6,3 +6,7 @@ The almighty jq processor, wrapped in a GUI.
 **jqi** facilitates the work with jq by wrapping it in a nice graphical user inteface and adds more functionality, which boost your productivity while querying & processing JSON data, for example: importing JSON from clipboard, files or even from network using cURL command, rich display of the imported JSON data with the ability to expand/collapse it, saving jq programs history in memory, exporting jq program output to JSON file and more.
 
 **jqi** is currently available only for Mac OSX, but will be soon available for Linux & Windows as well.
+
+## [Download jqi (Mac OSX)](https://goo.gl/jnFSgu)
+
+![jqi](https://github.com/nire0510/jqi/raw/master/icon_128x128.png "jqi")
