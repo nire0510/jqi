@@ -7,12 +7,12 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
   <meta name="keywords" content="jq, json, data, processing, import, export, productivity, development, manipulation">
-<meta name="feditor:layout" content="eyJjb25zb2xlIjp7InpJbmRleCI6NSwiaGVpZ2h0IjoiNTAlIiwid2lkdGgiOiIzMCUiLCJ0b3AiOiI1MCUiLCJsZWZ0IjoiNzAlIiwiaWQiOiJjb25zb2xlIn0sIm5vdGVwYWRDU1MiOnsiekluZGV4Ijo2LCJoZWlnaHQiOiI0OSUiLCJ3aWR0aCI6IjI5JSIsInRvcCI6MCwibGVmdCI6IjQwJSIsImlkIjoibm90ZXBhZENTUyIsInNjcm9sbExlZnQiOjIxLjI4MzEyNSwic2Nyb2xsVG9wIjo1NTkuNX0sIm5vdGVwYWRIVE1MIjp7InpJbmRleCI6NywiaGVpZ2h0IjoiNDklIiwid2lkdGgiOiIzOSUiLCJ0b3AiOjAsImxlZnQiOjAsImlkIjoibm90ZXBhZEhUTUwiLCJzY3JvbGxMZWZ0IjowLCJzY3JvbGxUb3AiOjI2MH0sIm5vdGVwYWRKUyI6eyJ6SW5kZXgiOjMsImhlaWdodCI6IjQ5JSIsIndpZHRoIjoiMzAlIiwidG9wIjowLCJsZWZ0IjoiNzAlIiwiaWQiOiJub3RlcGFkSlMiLCJzY3JvbGxMZWZ0IjowLCJzY3JvbGxUb3AiOjB9LCJwcmV2aWV3Ijp7InpJbmRleCI6NCwiaGVpZ2h0IjoiNTAlIiwid2lkdGgiOiI2OSUiLCJ0b3AiOiI1MCUiLCJsZWZ0IjowLCJpZCI6InByZXZpZXcifX0=">
+<meta name="feditor:layout" content="eyJjb25zb2xlIjp7InpJbmRleCI6NSwiaGVpZ2h0IjoiNTAlIiwid2lkdGgiOiIzMCUiLCJ0b3AiOiI1MCUiLCJsZWZ0IjoiNzAlIiwiaWQiOiJjb25zb2xlIn0sIm5vdGVwYWRDU1MiOnsiekluZGV4Ijo2LCJoZWlnaHQiOiI0OSUiLCJ3aWR0aCI6IjI5JSIsInRvcCI6MCwibGVmdCI6IjQwJSIsImlkIjoibm90ZXBhZENTUyIsInNjcm9sbExlZnQiOjIxLjI4MzEyNSwic2Nyb2xsVG9wIjo1NTkuNX0sIm5vdGVwYWRIVE1MIjp7InpJbmRleCI6NywiaGVpZ2h0IjoiNDklIiwid2lkdGgiOiIzOSUiLCJ0b3AiOjAsImxlZnQiOjAsImlkIjoibm90ZXBhZEhUTUwiLCJzY3JvbGxMZWZ0IjowLCJzY3JvbGxUb3AiOjEwNH0sIm5vdGVwYWRKUyI6eyJ6SW5kZXgiOjMsImhlaWdodCI6IjQ5JSIsIndpZHRoIjoiMzAlIiwidG9wIjowLCJsZWZ0IjoiNzAlIiwiaWQiOiJub3RlcGFkSlMiLCJzY3JvbGxMZWZ0IjowLCJzY3JvbGxUb3AiOjB9LCJwcmV2aWV3Ijp7InpJbmRleCI6MTAsImhlaWdodCI6IjUwJSIsIndpZHRoIjoiMjguMzE1Nzg5NDczNjg0MjEyJSIsInRvcCI6IjUwJSIsImxlZnQiOjAsImlkIjoicHJldmlldyJ9fQ==">
 <style id="feditor-css">
 body {
-  background: #43cea2;
-  background: -webkit-linear-gradient(to right, #185a9d, #43cea2);
-  background: linear-gradient(to right, #185a9d, #43cea2);
+  background: #aa076b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #aa076b, #61045f); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #aa076b, #61045f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 
   color: #fff;
@@ -26,6 +26,21 @@ article {
   justify-content: center;
   height: 100vh;
   width: 100vw;
+}
+
+@media all and (max-width: 550px) {
+  article {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  .button {
+    margin-top: 0;
+  }
 }
 
 h1 {
