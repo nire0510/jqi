@@ -8,197 +8,207 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta name="description" content="The almighty jq processor, wrapped in a GUI.">
   <meta name="keywords" content="jq, json, data, processing, import, export, productivity, development, manipulation">
-<meta name="feditor:layout" content="eyJjb25zb2xlIjp7InpJbmRleCI6NSwiaGVpZ2h0IjoiNTAlIiwid2lkdGgiOiIzMCUiLCJ0b3AiOiI1MCUiLCJsZWZ0IjoiNzAlIiwiaWQiOiJjb25zb2xlIn0sIm5vdGVwYWRDU1MiOnsiekluZGV4Ijo5NCwiaGVpZ2h0IjoiNDklIiwid2lkdGgiOiIyOSUiLCJ0b3AiOjAsImxlZnQiOiI0MCUiLCJpZCI6Im5vdGVwYWRDU1MiLCJzY3JvbGxMZWZ0IjowLCJzY3JvbGxUb3AiOjEzMC41fSwibm90ZXBhZEhUTUwiOnsiekluZGV4Ijo5MSwiaGVpZ2h0IjoiNDklIiwid2lkdGgiOiIzOSUiLCJ0b3AiOjAsImxlZnQiOjAsImlkIjoibm90ZXBhZEhUTUwiLCJzY3JvbGxMZWZ0IjowLCJzY3JvbGxUb3AiOjk1OX0sIm5vdGVwYWRKUyI6eyJ6SW5kZXgiOjkzLCJoZWlnaHQiOiI0OSUiLCJ3aWR0aCI6IjMwJSIsInRvcCI6MCwibGVmdCI6IjcwJSIsImlkIjoibm90ZXBhZEpTIiwic2Nyb2xsTGVmdCI6MCwic2Nyb2xsVG9wIjowfSwicHJldmlldyI6eyJ6SW5kZXgiOjg2LCJoZWlnaHQiOiI5LjY1NzcwMTcxMTQ5MTQ0MyUiLCJ3aWR0aCI6IjE1LjA1MjYzMTU3ODk0NzM2OCUiLCJ0b3AiOiI1MCUiLCJsZWZ0IjowLCJpZCI6InByZXZpZXcifX0=">
-<style id="feditor-css">
-body {
-  background-color: #ddd;
-  color: #000;
-  font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
-  margin: 0;
-}
+  <meta name="feditor:layout" content="eyJjb25zb2xlIjp7InpJbmRleCI6NSwiaGVpZ2h0IjoiNTAlIiwid2lkdGgiOiIzMCUiLCJ0b3AiOiI1MCUiLCJsZWZ0IjoiNzAlIiwiaWQiOiJjb25zb2xlIn0sIm5vdGVwYWRDU1MiOnsiekluZGV4Ijo5NCwiaGVpZ2h0IjoiNDklIiwid2lkdGgiOiIyOSUiLCJ0b3AiOjAsImxlZnQiOiI0MCUiLCJpZCI6Im5vdGVwYWRDU1MiLCJzY3JvbGxMZWZ0IjowLCJzY3JvbGxUb3AiOjEzMC41fSwibm90ZXBhZEhUTUwiOnsiekluZGV4Ijo5MSwiaGVpZ2h0IjoiNDklIiwid2lkdGgiOiIzOSUiLCJ0b3AiOjAsImxlZnQiOjAsImlkIjoibm90ZXBhZEhUTUwiLCJzY3JvbGxMZWZ0IjowLCJzY3JvbGxUb3AiOjk1OX0sIm5vdGVwYWRKUyI6eyJ6SW5kZXgiOjkzLCJoZWlnaHQiOiI0OSUiLCJ3aWR0aCI6IjMwJSIsInRvcCI6MCwibGVmdCI6IjcwJSIsImlkIjoibm90ZXBhZEpTIiwic2Nyb2xsTGVmdCI6MCwic2Nyb2xsVG9wIjowfSwicHJldmlldyI6eyJ6SW5kZXgiOjg2LCJoZWlnaHQiOiI5LjY1NzcwMTcxMTQ5MTQ0MyUiLCJ3aWR0aCI6IjE1LjA1MjYzMTU3ODk0NzM2OCUiLCJ0b3AiOiI1MCUiLCJsZWZ0IjowLCJpZCI6InByZXZpZXcifX0=">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-article {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-}
+    ga('create', 'UA-101630197-1', 'auto');
+    ga('send', 'pageview');
 
-h1 {
-  font-size: 4rem;
-}
-
-hr {
-  background-color: transparent;
-  height: 0;
-  margin: 0 auto;
-  width: 80vw;
-}
-
-a {
-  color: #000;
-}
-
-#intro {
-  background: #aa076b;
-  background: -webkit-linear-gradient(to right, #aa076b, #61045f);
-  background: linear-gradient(to right, #aa076b, #61045f);
-  color: #fff;
-  height: 100vh;
-  width: 100vw;
-  padding: 0;
-}
-
-#intro h2 {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-#jq {
-  background-color: #fff;
-  color: #333;
-  flex-direction: column;
-}
-
-#jq img {
-  max-height: 80vh;
-}
-
-#download {
-  background-color: #fff;
-  display: block;
-  text-align: center;
-}
-
-#download .button {
-  border-radius: 5px;
-  background-color: rgba(0, 128, 128, 0.8);
-  color: #fff;
-  font-size: 3rem;
-}
-
-#download .button:hover {
-  background-color: teal;
-}
-
-.jq-steps {
-  
-}
-
-.js-steps {
-  width: 400px;
-}
-
-.circle {
-  border-radius: 50%;
-  border: solid 10px #aaa;
-  background-color: #272822;
-  margin: 2rem;
-  height: 300px;
-  width: 300px;
-  position: relative;
-}
-
-.circle.program {
-  background: transparent url(https://github.com/nire0510/jqi/raw/master/jqi-program.png);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.circle.program .icon-button {
-  font-size: 10rem;
-  height: 150px;
-  width: 150px;
-}
-
-.circle.export {
-  background: transparent url(https://github.com/nire0510/jqi/raw/master/jqi.png);
-}
-
-.icon-button {
-  border-radius: 50%;
-  color: #fff;
-  font-size: 3rem;
-  height: 50px;
-  width: 50px;
-  padding: 1rem;
-  position: absolute;
-}
-
-.icon-button.web {
-  background-color: #ec407a;
-  left: 15%;
-  top: 20%;
-}
-
-.icon-button.file {
-  background-color: #66bb6a;
-  right: 15%;
-  top: 20%;
-}
-
-.icon-button.clipboard {
-  background-color: #03a9f4;
-  bottom: 10%;
-  left: calc(50% - 40px);
-}
-
-.button {
-  background-color: rgba(255, 255, 255, 0.8);
-  cursor: pointer;
-  color: teal;
-  border: solid 1px #fff;
-  border-radius: 3px;
-  display: inline-block;
-  font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-top: 2rem;
-  padding: 1rem;
-  transition: background-color 500ms ease-out;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.button.more {
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.8);
-  transition: color 500ms ease-out;
-}
-
-.button.more:hover {
-  background-color: transparent;
-  color: #fff;
-}
-
-.button:hover {
-  background-color: #fff;
-}
-
-.logo {
-  padding: 2rem;
-}
-
-.opacity-50 {
-  opacity: 0.5;
-}
-
-@media all and (max-width: 550px) {
-  article {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  h1 {
+  </script>
+  <style id="feditor-css">
+  body {
+    background-color: #ddd;
+    color: #000;
+    font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
     margin: 0;
   }
-  
-  .button {
-    margin-top: 0;
+
+  article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
   }
-}
-</style>
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  hr {
+    background-color: transparent;
+    height: 0;
+    margin: 0 auto;
+    width: 80vw;
+  }
+
+  a {
+    color: #000;
+  }
+
+  #intro {
+    background: #aa076b;
+    background: -webkit-linear-gradient(to right, #aa076b, #61045f);
+    background: linear-gradient(to right, #aa076b, #61045f);
+    color: #fff;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+  }
+
+  #intro h2 {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  #jq {
+    background-color: #fff;
+    color: #333;
+    flex-direction: column;
+  }
+
+  #jq img {
+    max-height: 80vh;
+  }
+
+  #download {
+    background-color: #fff;
+    display: block;
+    text-align: center;
+  }
+
+  #download .button {
+    border-radius: 5px;
+    background-color: rgba(0, 128, 128, 0.8);
+    color: #fff;
+    font-size: 3rem;
+  }
+
+  #download .button:hover {
+    background-color: teal;
+  }
+
+  .jq-steps {
+
+  }
+
+  .js-steps {
+    width: 400px;
+  }
+
+  .circle {
+    border-radius: 50%;
+    border: solid 10px #aaa;
+    background-color: #272822;
+    margin: 2rem;
+    height: 300px;
+    width: 300px;
+    position: relative;
+  }
+
+  .circle.program {
+    background: transparent url(https://github.com/nire0510/jqi/raw/master/jqi-program.png);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .circle.program .icon-button {
+    font-size: 10rem;
+    height: 150px;
+    width: 150px;
+  }
+
+  .circle.export {
+    background: transparent url(https://github.com/nire0510/jqi/raw/master/jqi.png);
+  }
+
+  .icon-button {
+    border-radius: 50%;
+    color: #fff;
+    font-size: 3rem;
+    height: 50px;
+    width: 50px;
+    padding: 1rem;
+    position: absolute;
+  }
+
+  .icon-button.web {
+    background-color: #ec407a;
+    left: 15%;
+    top: 20%;
+  }
+
+  .icon-button.file {
+    background-color: #66bb6a;
+    right: 15%;
+    top: 20%;
+  }
+
+  .icon-button.clipboard {
+    background-color: #03a9f4;
+    bottom: 10%;
+    left: calc(50% - 40px);
+  }
+
+  .button {
+    background-color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    color: teal;
+    border: solid 1px #fff;
+    border-radius: 3px;
+    display: inline-block;
+    font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    transition: background-color 500ms ease-out;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .button.more {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 500ms ease-out;
+  }
+
+  .button.more:hover {
+    background-color: transparent;
+    color: #fff;
+  }
+
+  .button:hover {
+    background-color: #fff;
+  }
+
+  .logo {
+    padding: 2rem;
+  }
+
+  .opacity-50 {
+    opacity: 0.5;
+  }
+
+  @media all and (max-width: 550px) {
+    article {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .button {
+      margin-top: 0;
+    }
+  }
+  </style>
 </head>
 <body>
   <article id="intro">
