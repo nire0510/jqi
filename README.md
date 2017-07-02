@@ -9,6 +9,6 @@ The almighty jq processor, wrapped in a GUI.
 
 **jqi** is currently available only for Mac OSX, but will be soon available for Linux & Windows as well.
 
-## [Download jqi (Mac OSX)](https://goo.gl/jnFSgu)
+## [Download jqi (Mac OSX)](https://www.dropbox.com/s/cjcujamk1nzwmsa/jqi.dmg?dl=1)
 
 ![jqi](https://github.com/nire0510/jqi/raw/master/icon_128x128.png "jqi")
