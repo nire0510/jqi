@@ -9,6 +9,11 @@ The almighty jq processor, wrapped in a GUI.
 
 **jqi** is currently available only for Mac OSX, but will be soon available for Linux & Windows as well.
 
+## Tips
+- Use keyboard shortcuts to control **JQI**. Hover with your mouse on a button and see it's hotkey.
+- Open JSON file right from your teminal:
+  `open /Applications/jqi.app --args -f _JSON_FILE_PATH_`
+
 ## [Download jqi (Mac OSX)](https://www.dropbox.com/s/cjcujamk1nzwmsa/jqi.dmg?dl=1)
 
 ![jqi](https://github.com/nire0510/jqi/raw/master/icon_128x128.png "jqi")
